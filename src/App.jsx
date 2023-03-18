@@ -1,11 +1,7 @@
-import RegisterForm from './components/RegisterForm'
+import RegisterPage from '@/pages/register'
+
 function App() {
-  return (
-    <>
-    <h1>It works</h1>
-    <RegisterForm />
-    </>
-  )
+  return RegisterPage
 }
 
 export default App
