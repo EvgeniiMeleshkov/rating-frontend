@@ -18,11 +18,23 @@ const api = method => answer =>
     else throw new Error(await res[answer]())
   }
 
+// POST
 const post = api('POST')
 const postText = post('text')
 const postTextContentJson = postText(contentJson)
 const register = postTextContentJson('/auth/register')
+const login = postTextContentJson('/auth/login')
+const passRecovery = postTextContentJson('/auth/recovery')
+
+// GET
+const get = api('GET')
+const getJson = get('json')
+const getJsonContentJson = getJson(contentJson)
+const me = getJsonContentJson('/auth/me')
 
 export default {
-  register
+  register,
+  login,
+  passRecovery,
+  me
 }
