@@ -1,6 +1,6 @@
 import LoginPage from '@/pages/Login'
 import PasswordRecovery from '@/pages/PasswordRecovery'
-import RegisterPage from '@/pages/register'
+import RegisterPage from '@/pages/Register'
 import ChangePassword from '@/pages/ChangePassword'
 
 function App () {
