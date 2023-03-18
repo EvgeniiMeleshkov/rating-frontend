@@ -4,6 +4,7 @@ import Button from '@/components/Button'
 import auth from '@/lib/auth'
 
 export default 
+<>
   <Form action="register" callback={auth.set(localStorage)}>
     <h1>Регистрация</h1>
     <Input type="text" name="email" />
@@ -12,3 +13,4 @@ export default
     <Input type="text" name="lastName" label="Фамилия" />
     <Button>Отправить</Button>
   </Form>
+</>

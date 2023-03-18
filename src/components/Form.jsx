@@ -14,8 +14,10 @@ export default function Form (props) {
   }
 
   return (
+  <>
     <form onSubmit={onSubmit}>
       {props.children}
     </form>
+  </>
   )
 }
