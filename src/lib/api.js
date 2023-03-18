@@ -28,7 +28,18 @@ const
   postTextContentJson = postText(contentJson),
   register = postTextContentJson('/auth/register')
 ;
-
+const login = postTextContentJson('/auth/login')
+const 
+  get = api('GET'),
+  getJson = get('json'),
+  getJsonContentJson = getJson(contentJson),
+  me = getJsonContentJson('/auth/me')
+;
+const passRecovery = postTextContentJson('/auth/recovery')
+  
 export default {
-  register
+  register,
+  login,
+  me,
+  passRecovery
 }
