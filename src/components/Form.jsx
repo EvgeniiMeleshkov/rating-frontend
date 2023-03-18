@@ -1,7 +1,8 @@
 import api from '@/lib/api'
 import parse from '@/lib/form2json'
 
-export default function Form (props) {
+export default
+function Form (props) {
   async function onSubmit (evt) {
     evt.preventDefault()
     const payload = parse(evt.target)
