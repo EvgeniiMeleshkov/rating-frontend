@@ -17,9 +17,9 @@ const api = method => answer =>
       method,
       body
     })
-
+  
     if (res.ok) return res[answer]()
-    else throw new Error(res.statusText)
+    else throw new Error(await res[answer]())
 }
 
 const 
