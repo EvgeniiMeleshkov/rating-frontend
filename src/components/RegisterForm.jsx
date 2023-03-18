@@ -1,20 +1,15 @@
+import { register } from '../api/API'
+import getFormData from '../utils/getFormData.js'
+import { auth } from '../data/auth.js'
+ 
 export default function RegisterForm () {
   async function onSubmit (evt) {
     evt.preventDefault()
-    const formData = new FormData(evt.target)
-    const payload = Object.fromEntries(formData.entries())
-
-    const res = await fetch ('/api/auth/register', {
-      method: 'POST',
-      headers: new Headers({
-        'Content-type': 'application/json'
-      }),
-      body: JSON.stringify(payload)
-    })
+    const payload = getFormData(evt.target)
+    const res = await register(JSON.stringify(payload))
   
-    const token = await res.text()
-
-    localStorage.setItem('token', token)
+    console.log(res)
+    auth.set(res)
   }
 
   return (
