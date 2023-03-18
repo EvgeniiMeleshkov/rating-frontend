@@ -11,15 +11,15 @@ export default defineConfig({
       '/api': {
         target: 'http://localhost:9000/',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   },
   resolve: {
     // To use @/componets, etc.
-    alias: [{ 
-      find: '@', 
-      replacement: resolve(__dirname, "src")
+    alias: [{
+      find: '@',
+      replacement: resolve(__dirname, 'src')
     }]
   }
 })
