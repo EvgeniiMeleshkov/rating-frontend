@@ -1,8 +1,6 @@
 import setHeaders from '@/lib/setHeaders.js'
 
-const
-  // Fetch from
-  baseURL = '/api'
+const baseURL = '/api'
 const makeURL = url => baseURL + url
 // Some mime types
 const contentJson = { 'content-type': 'application/json' }
@@ -20,8 +18,7 @@ const api = method => answer =>
     else throw new Error(await res[answer]())
   }
 
-const
-  post = api('POST')
+const post = api('POST')
 const postText = post('text')
 const postTextContentJson = postText(contentJson)
 const register = postTextContentJson('/auth/register')
