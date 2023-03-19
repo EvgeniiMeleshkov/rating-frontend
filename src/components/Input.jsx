@@ -1,8 +1,9 @@
 export default
-function Input ({ type, name, label }) {
+function Input (props) {
+  const { label, name, ...rest } = props
   return (
     <label> {label || name}
-      <input type={type} name={name} />
+      <input name={name} {...rest} />
     </label>
   )
 }
