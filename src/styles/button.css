@@ -1,0 +1,19 @@
+button {
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  width: 100%;
+  padding: 10px 0;
+  outline: none;
+  font-size: var(--l);
+}
+
+button.btn-blue {
+  background-color: var(--rambler-blue);
+}
+
+button:disabled {
+  cursor: pointer;
+  background-color: var(--light-carbone);
+  color: var(--cloud-gray);
+}

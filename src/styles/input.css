@@ -1,0 +1,16 @@
+input {
+  border: none;
+  background-color: var(--carbone);
+  display: block;
+  width: 100%;
+  color: var(--white);
+  background: var(--dark-carbone);
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 7px 0;
+}
+
+input[type="file"] {
+  padding: 10px;
+}
