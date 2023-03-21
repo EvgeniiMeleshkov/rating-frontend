@@ -1,34 +1,16 @@
-label {
-  color: var(--mainTextColor);
-}
-
 input {
-  border: none
-}
-
-input[type="text"] {
-  color: var(--mainTextColor);
-  background: var(--bgSecondaryColor)
-}
-
-input[type="password"] {
-  color: var(--mainTextColor);
-  background: var(--bgSecondaryColor)
+  border: none;
+  background-color: var(--carbone);
+  display: block;
+  width: 100%;
+  color: var(--white);
+  background: var(--dark-carbone);
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 7px 0;
 }
 
 input[type="file"] {
   padding: 10px;
-  backGround-color: var(--bgSecondaryColor)
 }
-
-/*input[type="file"]::text {
-  display: none
-}
-
-input[type="file"]::file-selector-button {
-  background-color: var(--bgMainColor);
-  border: none;
-  color: #cde2f4;
-  box-shadow: 0px 0px 7px 2px var(--accentColor), inset 0px 0px 6px 0px var(--accentColor);
-}
-*/

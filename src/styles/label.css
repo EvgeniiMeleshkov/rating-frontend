@@ -1,7 +1,5 @@
 label {
-  cursor: pointer;
-}
-
-label:hover {
-  text-shadow: 0px 0px 10px snow
+  color: var(--white);
+  display: block;
+  margin: 0 0 15px 0;
 }

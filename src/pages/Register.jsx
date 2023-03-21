@@ -2,13 +2,19 @@ import Form from '@/components/Form'
 import Input from '@/components/Input'
 import Button from '@/components/Button'
 import auth from '@/lib/auth'
+import { NavLink } from 'react-router-dom'
 
 export default
-  <Form action='register' callback={auth.set(localStorage)}>
-    <h1>Регистрация</h1>
-    <Input type='text' name='email' />
-    <Input type='password' name='password' label='пароль' />
-    <Input type='text' name='firstName' label='Имя' />
-    <Input type='text' name='lastName' label='Фамилия' />
-    <Button>Отправить</Button>
-  </Form>
+  <div className='auth-form'>
+    <Form action='register' callback={auth.set(localStorage)}>
+      <h1>
+        Регистрация &nbsp;
+        <NavLink to='/login'>Вход</NavLink>
+      </h1>
+      <Input type='text' name='email' label='Электронная почта' />
+      <Input type='password' name='password' label='Пароль' />
+      <Input type='text' name='firstName' label='Имя' />
+      <Input type='text' name='lastName' label='Фамилия' />
+      <Button disabled className='btn-blue'>Зарегистрироваться</Button>
+    </Form>
+  </div>
