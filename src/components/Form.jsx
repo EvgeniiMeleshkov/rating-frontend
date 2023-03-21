@@ -15,7 +15,7 @@ function Form (props) {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className='container' onSubmit={onSubmit}>
       {props.children}
     </form>
   )

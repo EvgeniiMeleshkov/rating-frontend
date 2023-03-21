@@ -1,9 +1,16 @@
 export default
 function Input (props) {
-  const { label, name, ...rest } = props
+  const { label, name, onChange, ...rest } = props
+  const upload = rest.type !== 'file'
+  
   return (
-    <label> {label || name}
-      <input name={name} {...rest} />
+    <label className='container' onClick={upload ? onChange : ()=>{}}> {label || name}
+      <input
+         style={{display: !upload ? "none" : "block"}}
+         name={name}  
+         onChange={!upload ? onChange : ()=>{}} 
+         {...rest}
+       />
     </label>
   )
 }

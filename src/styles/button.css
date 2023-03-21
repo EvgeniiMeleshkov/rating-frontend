@@ -1,0 +1,22 @@
+button {
+  background-color: var(--bgMainColor);
+  border: none;
+  color: #cde2f4;
+  cursor: pointer;
+  box-shadow: 0px 0px 7px 2px var(--accentColor), inset 0px 0px 6px 0px var(--accentColor);
+}
+
+button:hover {
+  box-shadow: 0px 0px 8px 3px var(--accentColor), inset 0px 0px 8px 0px var(--accentColor);
+}
+
+.buttonDesabled {
+  cursor: pointer;
+  box-shadow: 0px 0px 7px 2px var(--secondaryTextColor), inset 0px 0px 6px 0px var(--secondaryTextColor);
+  background-color: var(--bgSecondaryColor);
+  color: var(--secondaryTextColor)
+}
+
+.buttonDesabled:hover {
+  box-shadow: 0px 0px 8px 3px var(--secondaryTextColor), inset 0px 0px 8px 0px var(--secondaryTextColor);
+}

@@ -8,5 +8,5 @@ export default
     <h1>Войти</h1>
     <Input type='text' name='email' />
     <Input type='password' name='password' label='пароль' />
-    <Button>Войти</Button>
+    <Button desabled>Войти</Button>
   </Form>
