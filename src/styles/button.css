@@ -17,3 +17,7 @@ button:disabled {
   background-color: var(--light-carbone);
   color: var(--cloud-gray);
 }
+
+button:hover {
+  background-color: var(--dark-blue)
+}

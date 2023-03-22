@@ -15,6 +15,6 @@ export default
       <Input type='password' name='password' label='Пароль' />
       <Input type='text' name='firstName' label='Имя' />
       <Input type='text' name='lastName' label='Фамилия' />
-      <Button disabled className='btn-blue'>Зарегистрироваться</Button>
+      <Button className='btn-blue'>Зарегистрироваться</Button>
     </Form>
   </div>

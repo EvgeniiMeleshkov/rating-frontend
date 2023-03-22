@@ -13,6 +13,6 @@ export default
       </h1>
       <Input type='text' name='email' label='Электронная почта' />
       <Input type='password' name='password' label='Пароль' />
-      <Button className='btn-blue' disabled>Войти</Button>
+      <Button className='btn-blue'>Войти</Button>
     </Form>
   </div>
