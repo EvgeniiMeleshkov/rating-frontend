@@ -11,8 +11,11 @@ export default
         Войти &nbsp;
         <NavLink to='/register'>Регистрация</NavLink>
       </h1>
+      <h2>
+        <NavLink to='/pass-recovery'>Забыли&nbsp;пароль?</NavLink>
+      </h2>
       <Input type='text' name='email' label='Электронная почта' />
       <Input type='password' name='password' label='Пароль' />
-      <Button className='btn-blue' disabled>Войти</Button>
+      <Button className='btn-blue' >Войти</Button>
     </Form>
   </div>

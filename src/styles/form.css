@@ -16,6 +16,17 @@
   border-bottom: 1px dashed var(--light-carbone);
 }
 
+.auth-form h2 {
+  text-align: end;
+  margin-bottom: 10px;
+  font-size: var(--l)
+}
+
+.auth-form h2 a {
+  color: var(--pearl-gray);
+  border-bottom: 1px dashed var(--aluminium)
+}
+
 .auth-form label {
   font-size: var(--m);
 }
