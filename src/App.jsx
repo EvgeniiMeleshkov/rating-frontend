@@ -11,8 +11,8 @@ function App () {
       <Route path='/' element={Welcome} />
       <Route path='/register' element={RegisterPage} />
       <Route path='/login' element={LoginPage} />
-      <Route path='/passRecovery' element={PasswordRecovery} />
-      <Route path='/changePass' element={ChangePassword} />
+      <Route path='/pass-recovery' element={PasswordRecovery} />
+      <Route path='/change-pass' element={ChangePassword} />
     </Routes>
   )
 }

@@ -8,7 +8,8 @@ function Form (props) {
     const payload = parse(evt.target)
     try {
       const res = await api[props.action](payload)
-      props.callback(res)
+//      props.callback(res)
+      return res
     } catch (err) {
       console.log(err)
     }

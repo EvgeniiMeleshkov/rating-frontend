@@ -28,10 +28,12 @@ const passRecovery = postTextContentJson('/auth/recovery')
 
 // GET
 const get = api('GET')
+const getText = get('text')
+const getTextContentJson = getText(contentJson)
+
 const getJson = get('json')
 const getJsonContentJson = getJson(contentJson)
 const me = getJsonContentJson('/auth/me')
-
 export default {
   register,
   login,
