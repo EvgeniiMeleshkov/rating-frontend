@@ -9,6 +9,7 @@ function Form (props) {
     try {
       const res = await api[props.action](payload)
       props.callback(res)
+      location.replace(props.redirect)
     } catch (err) {
       console.log(err)
     }

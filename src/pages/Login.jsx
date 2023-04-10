@@ -6,13 +6,13 @@ import { NavLink } from 'react-router-dom'
 
 export default
   <div className='auth-form'>
-    <Form action='login' callback={auth.set(localStorage)}>
+    <Form action='login' callback={auth.set(localStorage)} redirect="/">
       <h1>
         Войти &nbsp;
         <NavLink to='/register'>Регистрация</NavLink>
       </h1>
       <Input type='text' name='email' label='Электронная почта' />
       <Input type='password' name='password' label='Пароль' />
-      <Button className='btn-blue' disabled>Войти</Button>
+      <Button className='btn-blue'>Войти</Button>
     </Form>
   </div>
