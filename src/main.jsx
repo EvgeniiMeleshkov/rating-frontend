@@ -9,7 +9,7 @@ const navigate = url => history.pushState(null, null, url)
 const path = location.pathname
 const search = new URLSearchParams(location.search)
 const token = search.get('token')
-if (token) localStorage.auth = search.get('token')
+if (token) localStorage.auth = token
 
 const render = (url, xs) => Component => {
   
