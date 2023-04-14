@@ -4,7 +4,7 @@ import Input from '@/components/Input'
 
 export default
   <div className='auth-form'>
-    <Form action='passRecovery'>
+    <Form action='recovery'>
       <h1>Восстановление пароля</h1>
       <Input type='text' name='email' />
       <Button className='btn-blue'>Отправить ссылку на почту</Button>

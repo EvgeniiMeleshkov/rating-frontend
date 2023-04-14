@@ -13,8 +13,9 @@ const api = method => answer =>
       method,
       body
     })
-
+    
     if (res.ok) return res[answer]()
+
     else throw new Error(await res[answer]())
   }
 
@@ -24,7 +25,7 @@ const postText = post('text')
 const postTextContentJson = postText(contentJson)
 const register = postTextContentJson('/auth/register')
 const login = postTextContentJson('/auth/login')
-const passRecovery = postTextContentJson('/auth/recovery')
+const recovery = postTextContentJson('/auth/recovery')
 
 // GET
 const get = api('GET')
@@ -33,8 +34,8 @@ const getJsonContentJson = getJson(contentJson)
 const me = getJsonContentJson('/auth/me')
 
 export default {
+  recovery,
   register,
   login,
-  passRecovery,
   me
 }

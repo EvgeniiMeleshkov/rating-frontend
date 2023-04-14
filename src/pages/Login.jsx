@@ -12,7 +12,7 @@ export default
         <NavLink to='/register'>Регистрация</NavLink>
       </h1>
       <Input type='text' name='email' label='Электронная почта' />
-      <Input type='password' name='password' label='Пароль' />
+      
       <Button className='btn-blue'>Войти</Button>
     </Form>
   </div>
