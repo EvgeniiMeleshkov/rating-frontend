@@ -4,19 +4,30 @@ import LoginPage from '@/pages/Login'
 import PasswordRecovery from '@/pages/PasswordRecovery'
 import RegisterPage from '@/pages/Register'
 import Profile from '@/pages/Profile'
+import Header from '@/pages/Header'
 
 function Protected () {
-  return <Routes>
-    <Route path="/" element={<Profile />} />
-  </Routes>
+  return ( 
+    <>
+      <Header/>
+      <Routes>
+      <Route path="/" element={<Profile />} />
+      </Routes>  
+    </>
+  )
 }
 
 function Unprotected () {
-  return <Routes>
-    <Route path="/login" element={LoginPage} />
-    <Route path="/register" element={RegisterPage} />
-    <Route path="/recovery" element={PasswordRecovery} />
-  </Routes>
+  return  (
+    <>
+      <Header/>
+    <Routes>
+      <Route path="/login" element={LoginPage} />
+      <Route path="/register" element={RegisterPage} />
+      <Route path="/recovery" element={PasswordRecovery} />
+    </Routes>
+    </>
+  )
 }
 
 export {
