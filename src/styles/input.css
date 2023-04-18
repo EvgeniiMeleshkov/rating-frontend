@@ -1,14 +1,16 @@
 input {
   border: none;
-  background-color: var(--carbone);
+  background-color: var(--aluminium);
   display: block;
   width: 100%;
-  color: var(--white);
-  background: var(--dark-carbone);
+  color: var(--dark-carbone);
+  background: var(--aluminium);
   outline: none;
   padding: 10px;
   box-sizing: border-box;
   margin: 7px 0;
+  font-weight: 600;
+  font-size: large;
 }
 
 input[type="file"] {

@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom'
-import ChangePassword from '@/pages/ChangePassword'
 import LoginPage from '@/pages/Login'
 import PasswordRecovery from '@/pages/PasswordRecovery'
 import RegisterPage from '@/pages/Register'
