@@ -3,6 +3,7 @@ import API from '@/lib/api'
 import Image from '@/components/Image'
 import Button from '@/components/Button'
 import clear from '@/lib/clear.js'
+import Table from '../components/Table'
 
 export default function Profile () {
   const [user, setUser] = useState({})
@@ -14,8 +15,8 @@ export default function Profile () {
   }, [])
 
   return (
+    <div className='container'>
     <div className='profile-style'>
-      <h1>Страница пользователя</h1>
       <div className='one-x-three-greed'>
         <div className='div1-1x3'>
           <Image 
@@ -26,9 +27,15 @@ export default function Profile () {
           />
         </div>
         <div className='div2-1x3'>
-          <h2>{user.firstName} &nbsp; {user.lastName}</h2>
+          <ul>
+            <li><h2>{user.firstName} &nbsp; {user.lastName}</h2></li>
+            <li><h2>{user.email}</h2></li>
+          </ul>
         </div>
       </div>
+    </div>
+    
+    <Table/>
     </div>
   )
 }

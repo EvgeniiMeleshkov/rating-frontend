@@ -7,12 +7,19 @@ export default function Image (props) {
     <div className={className}>
       <img src={src} alt={alt} />
       {editable &&
-        <Input
-          onChange={onChange}
-          type='file'
-          accept='image/png, image/jpeg'
-          label='Изменить'
-        />}
+
+      <div className='editable-label-container'>
+        <div className='editable-label'>
+          <Input
+            onChange={onChange}
+            type='file'
+            accept='image/png, image/jpeg'
+            label='Изменить'
+          />
+        </div>
+      </div>
+
+      }
     </div>
   )
 }

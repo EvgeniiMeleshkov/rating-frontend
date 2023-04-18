@@ -1,0 +1,8 @@
+
+li {
+  text-align-last: left;
+}
+li::marker {
+  color: var(--orange);
+  height: 10px;
+}
