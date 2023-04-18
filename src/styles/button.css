@@ -12,6 +12,10 @@ button.btn-blue {
   background-color: var(--rambler-blue);
 }
 
+button.btn-orange {
+  background-color: var(--orange);
+}
+
 button:disabled {
   cursor: pointer;
   background-color: var(--light-carbone);

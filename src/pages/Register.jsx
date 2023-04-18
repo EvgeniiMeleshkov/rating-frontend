@@ -5,6 +5,7 @@ import auth from '@/lib/auth'
 import { NavLink } from 'react-router-dom'
 
 export default
+<div className='auth-container'>
   <div className='auth-form'>
     <Form action='register' 
       callback={auth.set(localStorage)}
@@ -18,6 +19,7 @@ export default
       
       <Input type='text' name='firstName' label='Имя' />
       <Input type='text' name='lastName' label='Фамилия' />
-      <Button className='btn-blue'>Зарегистрироваться</Button>
+      <Button className='btn-orange'>Зарегистрироваться</Button>
     </Form>
   </div>
+</div>
