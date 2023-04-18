@@ -1,10 +1,12 @@
 @import '@/styles/variables.css';
 @import '@/styles/global.css';
-@import '@/styles/header.css';
+@import '@/styles/headers.css';
 @import '@/styles/button.css';
 @import '@/styles/label.css';
 @import '@/styles/input.css';
 @import '@/styles/profile.css';
 @import '@/styles/form.css';
 @import '@/styles/1x3greed.css';
-@import '@/styles/avatar.css'
+@import '@/styles/avatar.css';
+@import '@/styles/header.css';
+@import '@/styles/links.css';

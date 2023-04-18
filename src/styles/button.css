@@ -18,6 +18,12 @@ button:disabled {
   color: var(--cloud-gray);
 }
 
-button:hover {
+button.btn-blue:hover {
   background-color: var(--dark-blue)
+}
+
+button.btn-header {
+  background-color: transparent;
+  width: auto;
+  margin: 0 10px 0 10px ;
 }
