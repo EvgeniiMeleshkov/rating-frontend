@@ -32,10 +32,12 @@ const get = api('GET')
 const getJson = get('json')
 const getJsonContentJson = getJson(contentJson)
 const me = getJsonContentJson('/auth/me')
+const getUserMarks = getJson(contentJson)
 
 export default {
   recovery,
   register,
   login,
-  me
+  me,
+  getUserMarks
 }

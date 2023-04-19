@@ -1,10 +1,13 @@
 export default function Table (props) { 
-  const { label } = props
+
   return (
-    <>
-      <table id={label}>
-        
+      <table>
+        <thead>
+          <tr>{props.head}</tr>
+        </thead>
+        <tbody>
+          {props.children}
+        </tbody>
       </table>
-    </>
   )
 }

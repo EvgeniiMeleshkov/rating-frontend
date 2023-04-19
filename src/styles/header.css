@@ -27,6 +27,11 @@
   -moz-transition: top 0.5s ease-in-out;
   -webkit-transition: top 0.5s ease-in-out;
 }
+.slide a {
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s;
+}
 .toggle{
   font-size: 20px;
   color: #5D6C5A7C;
@@ -49,6 +54,7 @@
   opacity: 1;
 }
 .slide:hover a {
+  opacity: 1;
   z-index: 1;
   transition: all 0.5s;
 }

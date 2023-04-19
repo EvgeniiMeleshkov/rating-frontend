@@ -17,15 +17,13 @@ const render = (url, xs) => Component => {
   else navigate(url)
 
   ReactDOM.createRoot(root).render(
-    <React.StrictMode>
       <BrowserRouter>
         <Component />
       </BrowserRouter>
-    </React.StrictMode>
   )
 }
 
-const renderLogin = render('/login', ['/login', '/register'])
+const renderLogin = render('/login', ['/login', '/register', '/notification'])
 const renderProfile = render('/', ['/'])
 
 if (!localStorage.auth) renderLogin(Unprotected)

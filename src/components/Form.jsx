@@ -8,6 +8,12 @@ function Form (props) {
     const payload = parse(evt.target)
     try {
       const res = await api[props.action](payload)
+      if (props.action === 'recovery') {
+        if (res === 'success') {
+          location.replace('/notification')
+          return
+        }
+      }
       props.callback(res)
       location.replace(props.redirect)
     } catch (err) {
