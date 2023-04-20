@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import API from '@/lib/api'
 import Image from '@/components/Image'
-import Button from '@/components/Button'
 import clear from '@/lib/clear.js'
 import Table from '../components/Table'
 
@@ -15,6 +14,8 @@ export default function Profile () {
   
   const pointAmount = marks.length && marks.reduce((x, y)=> x + y.value, 0)
   
+  const competitors = marks.map(x => x.competitor._id)
+  const competitorsAmount = new Set(competitors)
 
   async function getMarks (id) {
     const marks = await API.getUserMarks(`/marks/user/${id}`)()
@@ -29,6 +30,8 @@ export default function Profile () {
       })
       .catch(clear)
   }, [])
+
+  console.log(marks)
 
   return (
     <div className='container'>
@@ -53,8 +56,8 @@ export default function Profile () {
           { user.expert 
           ?
           <ul>
-            {/* <li><h3>Проставлено оценок: {isMarks ? marks.length : 0}</h3></li>
-            <li><h3>Оценено участников: {isMarks ? marks : 0}</h3></li> */}
+            <li><h3>Проставлено оценок: {isMarks ? marks.length : 0}</h3></li>
+            <li><h3>Оценено участников: {isMarks ? competitorsAmount.size : 0}</h3></li>
           </ul>
           :
           <ul>
@@ -65,7 +68,7 @@ export default function Profile () {
         </div>
       </div>
     </div>
-    { isMarks &&
+    { isMarks && !expert &&
       <Table head="Мои оценки">
         <tr>
           <td>Параметр</td>
@@ -73,9 +76,9 @@ export default function Profile () {
           <td>Оценка</td>
         </tr>
         {
-          marks.map(x => {
+          marks.map((x, idx) => {
             return (
-              <tr>
+              <tr key={idx}>
                 <td>{x.markType.title}</td>
                 <td>{`${x.expert.firstName} ${x.expert.lastName}`}</td>
                 <td>{x.value}</td>
@@ -84,6 +87,26 @@ export default function Profile () {
           })
         }
     </Table>
+    }
+    { isMarks && expert &&
+      <Table head="Мои оценки">
+      <tr>
+        <td>Параметр</td>
+        <td>Участник</td>
+        <td>Оценка</td>
+      </tr>
+      {
+        marks.map((x, idx) => {
+          return (
+            <tr key={idx}>
+              <td>{x.markType.title}</td>
+              <td>{`${x.competitor.firstName} ${x.competitor.lastName}`}</td>
+              <td>{x.value}</td>
+            </tr>
+          )
+        })
+      }
+      </Table>
     }
     </div>
   )
