@@ -13,7 +13,7 @@ export default function Header () {
       <NavLink to='/competitors/top'>Рейтинг</NavLink>
         <NavLink >Оценка</NavLink>
         <NavLink to='/competitors'>Участники</NavLink>
-        <NavLink to='/'>Профиль</NavLink>
+        <NavLink to='/profile'>Профиль</NavLink>
         <div className='slide'>
           <div className='box'>
             <NavLink >Настройки</NavLink>

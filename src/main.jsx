@@ -24,7 +24,7 @@ const render = (url, xs) => Component => {
 }
 
 const renderLogin = render('/login', ['/login', '/register', '/notification'])
-const renderProfile = render('/', ['/', '/experts', '/competitors', '/competitors/top'])
+const renderProfile = render('/profile', ['/profile', '/experts', '/competitors', '/competitors/top'])
 
 if (!localStorage.auth) renderLogin(Unprotected)
 else renderProfile(Protected)

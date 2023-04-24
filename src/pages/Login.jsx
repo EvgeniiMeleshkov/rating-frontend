@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 export default
 <div className='auth-container'>
   <div className='auth-form'>
-    <Form action='recovery' callback={auth.set(localStorage)} redirect="/">
+    <Form action='login' callback={auth.set(localStorage)} redirect="/">
       <h1>
         Войти &nbsp;
         <NavLink to='/register'>Регистрация</NavLink>

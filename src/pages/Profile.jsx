@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import API from '@/lib/api'
 import Image from '@/components/Image'
-import clear from '@/lib/clear.js'
+
 import Table from '@/components/Table'
 
-export default function Profile () {
-  const [user, setUser] = useState({})
+export default function Profile (props) {
+  const {user} = props
+
   const [marks, setMarks] = useState([])
 
   const isMarks = marks.length !== 0
@@ -17,19 +18,13 @@ export default function Profile () {
   const competitors = marks.map(x => x.competitor._id)
   const competitorsAmount = new Set(competitors)
 
-  async function getMarks (id) {
-    const marks = await API.getUserMarks(`/marks/user/${id}`)()
-    setMarks(marks)
-  }
-
   useEffect(() => {
-    API.me()
-      .then(res => {
-        setUser(res)
-        getMarks(res._id)
-      })
-      .catch(clear)
-  }, [])
+    if(user._id) {
+      API.getUserMarks(`/marks/user/${user._id}`)()
+      .then(setMarks)
+      .catch(console.log)
+    }
+  }, [user])
 
   return (
     <div className='container'>
@@ -59,7 +54,7 @@ export default function Profile () {
           </ul>
           :
           <ul>
-            <li><h3>Место в рейтинге: {isMarks ? 2 : 0}</h3></li>
+            <li><h3>Место в рейтинге: {user.position ? user.position : 'нет данных'}</h3></li>
             <li><h3>Всего очков: {isMarks ? pointAmount : 0}</h3></li>
           </ul>
           }

@@ -1,17 +1,9 @@
 import { useEffect, useState } from 'react'
 import Table from '@/components/Table'
-import API from '@/lib/api'
 
-export default function Rating () {
+export default function Rating (props) {
+  const {top} = props
 
-  const [top, setTop] = useState([])
-
-  useEffect(()=>{
-    API.getTop()
-    .then(setTop)
-    .catch(console.log)
-  },[])
-  
   return (
     <div className="container">
       <Table head='Топ 10 участников'>
@@ -27,7 +19,7 @@ export default function Rating () {
             return (
               <tr key={idx}>
                 <td><img className='avatar small' src={x.avatar}/></td>
-                <td>{idx + 1}</td>
+                <td>{x.position}</td>
                 <td>{x.sum}</td>
                 <td>{x.email}</td>
                 <td>{x.firstName}</td>
