@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import API from '@/lib/api'
 import Image from '@/components/Image'
 import clear from '@/lib/clear.js'
-import Table from '../components/Table'
+import Table from '@/components/Table'
 
 export default function Profile () {
   const [user, setUser] = useState({})
@@ -30,8 +30,6 @@ export default function Profile () {
       })
       .catch(clear)
   }, [])
-
-  console.log(marks)
 
   return (
     <div className='container'>
@@ -68,8 +66,8 @@ export default function Profile () {
         </div>
       </div>
     </div>
-    { isMarks && !expert &&
-      <Table head="Мои оценки">
+    { isMarks && !user.expert &&
+      <Table head='Мои оценки'>
         <tr>
           <td>Параметр</td>
           <td>Эксперт</td>
@@ -88,7 +86,7 @@ export default function Profile () {
         }
     </Table>
     }
-    { isMarks && expert &&
+    { isMarks && user.expert &&
       <Table head="Мои оценки">
       <tr>
         <td>Параметр</td>

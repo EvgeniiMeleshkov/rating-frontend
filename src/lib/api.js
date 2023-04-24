@@ -34,10 +34,17 @@ const getJsonContentJson = getJson(contentJson)
 const me = getJsonContentJson('/auth/me')
 const getUserMarks = getJson(contentJson)
 
+const getCompetitors = getJsonContentJson('/users/competitors')
+const getExperts = getJsonContentJson('/users/experts')
+const getTop = getJsonContentJson('/users/top')
+
 export default {
   recovery,
   register,
   login,
   me,
-  getUserMarks
+  getUserMarks,
+  getExperts,
+  getCompetitors,
+  getTop
 }
