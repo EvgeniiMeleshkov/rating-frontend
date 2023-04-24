@@ -46,7 +46,7 @@ function Protected () {
         <Route path='/profile' element={<Profile user={user} />} />
         <Route path='/experts' element={<Experts />} />
         <Route path='/competitors' element={<Competitors />} />
-        <Route path='/competitors/top' element={<Rating top={top}/>} />
+        <Route path='/competitors/top' element={<Rating top={top.slice(0, 10)}/>} />
       </Routes>  
     </>
   )

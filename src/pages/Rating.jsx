@@ -3,7 +3,7 @@ import Table from '@/components/Table'
 
 export default function Rating (props) {
   const {top} = props
-
+  
   return (
     <div className="container">
       <Table head='Топ 10 участников'>
