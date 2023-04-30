@@ -1,15 +1,7 @@
-import { useEffect, useState } from 'react'
 import Table from '@/components/Table'
-import API from '@/lib/api'
 
-export default function Competitors () {
-  const [competitors, setCompetitors] = useState([])
-  useEffect(()=>{
-    API.getCompetitors()
-    .then(setCompetitors)
-    .catch(console.log)
-  },[])
-
+export default function Competitors (props) {
+  const {competitors} = props
   return (
     <div className='container' >
       <Table head='Участники'>

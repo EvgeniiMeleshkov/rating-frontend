@@ -5,7 +5,7 @@ import Image from '@/components/Image'
 import Table from '@/components/Table'
 
 export default function Profile (props) {
-  const {user} = props
+  const {user, mark} = props
 
   const [marks, setMarks] = useState([])
 
@@ -32,7 +32,7 @@ export default function Profile (props) {
       <div className='one-x-three-greed'>
         <div className='div1-1x3'>
           <Image 
-            editable 
+            editable={mark}
             className='avatar' 
             src={user.avatar} 
             alt={user.firstName} 
@@ -61,7 +61,7 @@ export default function Profile (props) {
         </div>
       </div>
     </div>
-    { isMarks && !user.expert &&
+    {!mark && isMarks && !user.expert &&
       <Table head='Мои оценки'>
         <tr>
           <td>Параметр</td>
@@ -81,7 +81,7 @@ export default function Profile (props) {
         }
     </Table>
     }
-    { isMarks && user.expert &&
+    {!mark && isMarks && user.expert &&
       <Table head="Мои оценки">
       <tr>
         <td>Параметр</td>

@@ -6,8 +6,7 @@ export default function Image (props) {
   return (
     <div className={className}>
       <img src={src} alt={alt} />
-      {editable &&
-
+      {!editable &&
       <div className='editable-label-container'>
         <div className='editable-label'>
           <Input
@@ -18,7 +17,6 @@ export default function Image (props) {
           />
         </div>
       </div>
-
       }
     </div>
   )

@@ -10,8 +10,8 @@ export default function Header () {
         LOGO
       </div>
       <div className='btn-group'>
-      <NavLink to='/competitors/top'>Рейтинг</NavLink>
-        <NavLink >Оценка</NavLink>
+      <NavLink to='/top'>Рейтинг</NavLink>
+        <NavLink to='/mark'>Оценка</NavLink>
         <NavLink to='/competitors'>Участники</NavLink>
         <NavLink to='/profile'>Профиль</NavLink>
         <div className='slide'>
