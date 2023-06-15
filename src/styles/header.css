@@ -12,10 +12,11 @@
   box-sizing: border-box;
 }
 
-/* 
-
-
-*/
+img {
+  box-sizing: border-box;
+  height: 100%;
+  width: auto;
+}
 
 .cm-e-menu {
 	position: relative;
