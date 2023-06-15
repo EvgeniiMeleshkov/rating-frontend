@@ -2,28 +2,43 @@ import { NavLink } from 'react-router-dom'
 import Button from '@/components/Button'
 import clear from '@/lib/clear.js'
 
-export default function Header () {
+export default function Header (props) {
+console.log(props)
+
+  const {user} = props
 
   return (
+    
     <div className='header'>
       <div>
         LOGO
       </div>
-      <div className='btn-group'>
-      <NavLink to='/top'>Рейтинг</NavLink>
-        <NavLink to='/mark'>Оценка</NavLink>
-        <NavLink to='/competitors'>Участники</NavLink>
-        <NavLink to='/profile'>Профиль</NavLink>
-        <div className='slide'>
-          <div className='box'>
-            <NavLink >Настройки</NavLink>
-            <NavLink to='/experts'>Эксперты</NavLink>
-            <hr style={{width: '100%', margin: '0'}}/>
-            {localStorage.auth && <Button onClick={clear} className='btn-header'>Выход</Button>}
-          </div>
+      {user 
+
+      ?  <div className='cm-e-menu'>
+          <ul>
+            <li className='topmenu'><NavLink to='/top'>Рейтинг</NavLink> </li>
+            <li className='topmenu'><NavLink to='/mark'>Оценка</NavLink> </li>
+            <li className='topmenu'><NavLink to='/competitors'>Участники</NavLink> </li>
+            <li className='topmenu'><NavLink to='/profile'>Профиль</NavLink> 
+              <ul className='submenu'>
+                <li>
+                  <NavLink >Настройки</NavLink>
+                </li>
+                <li>
+                  <NavLink to='/experts'>Эксперты</NavLink>
+                </li>
+                <li>
+                  {localStorage.auth && <Button onClick={clear} className='btn-header'>Выход</Button>}
+                </li>
+              </ul>
+            
+            </li>
+          </ul>
         </div>
-        
-      </div>
+      : ""
+      
+      }
     </div>
   )
 }

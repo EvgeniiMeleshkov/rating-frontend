@@ -12,49 +12,67 @@
   box-sizing: border-box;
 }
 
-.slide{
-  z-index: -1;
-  opacity: 0;
-  position: absolute;
-  background: var(--orange);
-  width: 103px;
-  top: -115px;
-  right: 0;
-  height: 165px;
-  transition: top 0.5s ease-in-out;
-  -o-transition: top 0.5s ease-in-out;
-  -ms-transition: top 0.5s ease-in-out;
-  -moz-transition: top 0.5s ease-in-out;
-  -webkit-transition: top 0.5s ease-in-out;
+/* 
+
+
+*/
+
+.cm-e-menu {
+	position: relative;
+	z-index: 1000;
+	color: var(--white);
+	font-weight: 200;
+	}
+.cm-e-menu ul {
+	margin: 0; padding: 0;
 }
-.slide a {
-  z-index: -1;
-  opacity: 0;
-  transition: all 0.5s;
+.cm-e-menu li {
+	position: relative;
+	white-space: nowrap;
+	cursor: pointer;
+	text-transform: capitalize !important;
+	list-style: none;
+
+	-webkit-transition: background-color ease-in 300ms;
+	-moz-transition: background-color ease-in 300ms;
+	-ms-transition: background-color ease-in 300ms;
+	-o-transition: background-color ease-in 300ms;
+	transition: background-color ease-in 300ms;
 }
-.toggle{
-  font-size: 20px;
-  color: #5D6C5A7C;
-  text-shadow: -3px 0 4px #5D6C5A7C;
-  position: absolute;
-  top: 50px;
-  padding-left: 5px;
-  background: transparent;
+.cm-e-menu li:hover {
+	text-shadow: 0 1px 4px var(--pearl-gray);
 }
-.box {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: end;
-  z-index: -1;
-  height: 100%;
+.cm-e-menu ul li.topmenu {
+	display: inline-table;
+	padding: .3em 1em;
 }
-.slide:hover{
-  top: 0px;
-  opacity: 1;
+.cm-e-menu .topmenu ul {
+	display:none;
+	position: absolute;
+	background-color: var(--orange);
 }
-.slide:hover a {
-  opacity: 1;
-  z-index: 1;
-  transition: all 0.5s;
+.cm-e-menu li:hover > ul {
+	display: table;
+}
+.cm-e-menu ul.submenu {
+	top: 100%; left: 0;
+	padding-top: .6em;
+	padding-bottom: .5em;	
+}
+.cm-e-menu ul.submenu .submenu {
+	top: -.5em; left: 100%;
+	font-size: 1em
+}
+.cm-e-menu ul.submenu li {
+	padding: .2em 1.5em;
+	font-size: .9rem;
+}
+.cm-e-menu li.divider {
+	padding: 0;
+	border-top: 1px solid #343434;
+	margin: .5rem auto .3rem;
+	cursor: default;
+}
+.cm-e-menu li.divider:hover {
+	background-color: transparent;
 }

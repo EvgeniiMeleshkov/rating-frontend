@@ -47,7 +47,7 @@ function Protected () {
 
   return ( 
     <>
-      <Header/>
+      <Header user={user}/>
       <Routes>
         <Route path='/profile' element={<Profile user={user} />} />
         <Route path='/experts' element={<Experts />} />
@@ -62,7 +62,7 @@ function Protected () {
 function Unprotected () {
   return  (
     <>
-      <Header/>
+      <Header />
     <Routes>
       <Route path='/login' element={LoginPage} />
       <Route path='/register' element={RegisterPage} />
