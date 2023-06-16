@@ -12,14 +12,17 @@ export default function Experts () {
 
   return (
     <div className='container' >
-      <Table head='Эксперты'>
-        <tr>
-          <td></td>
-          <td>Почта</td>
-          <td>Имя</td>
-          <td>Фамилия</td>
-        </tr>
-        {experts.map((x, idx) => {
+      <Table 
+        label='Эксперты'
+        head={
+          <>
+            <td></td>
+            <td>Почта</td>
+            <td>Имя</td>
+            <td>Фамилия</td>
+          </>
+        }
+        children={experts.map((x, idx) => {
           return (
             <tr key={idx}>
               <td><img className='avatar small' src={x.avatar}/></td>
@@ -29,7 +32,7 @@ export default function Experts () {
             </tr>
           )
         })}
-      </Table>
+     />
     </div>
   )
 }

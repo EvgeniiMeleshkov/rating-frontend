@@ -62,44 +62,44 @@ export default function Profile (props) {
       </div>
     </div>
     {!mark && isMarks && !user.expert &&
-      <Table head='Мои оценки'>
-        <tr>
-          <td>Параметр</td>
-          <td>Эксперт</td>
-          <td>Оценка</td>
-        </tr>
-        {
-          marks.map((x, idx) => {
-            return (
-              <tr key={idx}>
-                <td>{x.markType.title}</td>
-                <td>{`${x.expert.firstName} ${x.expert.lastName}`}</td>
-                <td>{x.value}</td>
-              </tr>
-            )
-          })
-        }
-    </Table>
+      <Table label='Мои оценки'
+              head={<>
+                <td>Параметр</td>
+                <td>Эксперт</td>
+                <td>Оценка</td>
+              </>}
+              children={
+                marks.map((x, idx) => {
+                  return (
+                    <tr key={idx}>
+                      <td>{x.markType.title}</td>
+                      <td>{`${x.expert.firstName} ${x.expert.lastName}`}</td>
+                      <td>{x.value}</td>
+                    </tr>
+                  )
+                })
+              }
+      />
     }
     {!mark && isMarks && user.expert &&
-      <Table head="Мои оценки">
-      <tr>
-        <td>Параметр</td>
-        <td>Участник</td>
-        <td>Оценка</td>
-      </tr>
-      {
-        marks.map((x, idx) => {
-          return (
-            <tr key={idx}>
-              <td>{x.markType.title}</td>
-              <td>{`${x.competitor.firstName} ${x.competitor.lastName}`}</td>
-              <td>{x.value}</td>
-            </tr>
-          )
-        })
-      }
-      </Table>
+      <Table label="Мои оценки"
+              head={<>
+                <td>Параметр</td>
+                <td>Участник</td>
+                <td>Оценка</td>
+              </>}
+              children={
+                marks.map((x, idx) => {
+                  return (
+                    <tr key={idx}>
+                      <td>{x.markType.title}</td>
+                      <td>{`${x.competitor.firstName} ${x.competitor.lastName}`}</td>
+                      <td>{x.value}</td>
+                    </tr>
+                  )
+                })
+              }
+      />
     }
     </div>
   )
