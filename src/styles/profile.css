@@ -18,3 +18,10 @@
   padding: 0
 }
 
+.profile-style a {
+  text-decoration: none;
+  border: none;
+  color: var(--orange);
+  font-weight: 500;
+  font-size: larger;
+}

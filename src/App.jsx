@@ -12,6 +12,7 @@ import API from '@/lib/api.js'
 import clear from '@/lib/clear.js'
 import Mark from './pages/Mark'
 import Settings from './pages/Settings'
+import MarkTypes from './pages/MarkTypes'
 
 function Protected () {
   const [user, setUser] = useState({})
@@ -55,6 +56,7 @@ function Protected () {
         <Route path='/top' element={<Rating top={top.slice(0, 10)} />} />
         <Route path='/mark' element={<Mark competitors={competitors} />} />
         <Route path='/settings' element={<Settings />} />
+        <Route path='/settings/mark-types' element={<MarkTypes />} />
       </Routes>
     </>
   )
