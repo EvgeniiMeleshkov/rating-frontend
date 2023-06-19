@@ -17,8 +17,8 @@ export default function Settings (props) {
     if (obj.title && obj.values.length > 1 && obj.multiplier) {
       console.log('Отлично! \n', obj)
       api.createMarkType(json)
+        .then((res=>setA(a+1)))
         .then(clear)
-        .then(setA(a + 1))
         .catch(console.log)
     } else {
       console.log('Не полные данные')
