@@ -1,0 +1,12 @@
+.settings {
+
+}
+
+.settings h1 {
+  color: var(--carbone);
+}
+
+.settings label {
+  font-weight: 500;
+  color: var(--orange);
+}

@@ -12,14 +12,13 @@ const token = search.get('token')
 if (token) localStorage.auth = token
 
 const render = (url, xs) => Component => {
-  
   if (xs.includes(path)) navigate(path)
   else navigate(url)
 
   ReactDOM.createRoot(root).render(
-      <BrowserRouter>
-        <Component />
-      </BrowserRouter>
+    <BrowserRouter>
+      <Component />
+    </BrowserRouter>
   )
 }
 

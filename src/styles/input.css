@@ -17,3 +17,7 @@ input[type="file"] {
   display: none;
   padding: 10px;
 }
+input[type="number"] {
+  width: 100px;
+  border: 1px solid var(--carbon) !important;
+}

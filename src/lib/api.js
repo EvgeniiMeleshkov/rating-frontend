@@ -13,7 +13,7 @@ const api = method => answer =>
       method,
       body
     })
-    
+
     if (res.ok) return res[answer]()
 
     else throw new Error(await res[answer]())
@@ -26,6 +26,7 @@ const postTextContentJson = postText(contentJson)
 const register = postTextContentJson('/auth/register')
 const login = postTextContentJson('/auth/login')
 const recovery = postTextContentJson('/auth/recovery')
+const createMarkType = postTextContentJson('/markTypes')
 
 // GET
 const get = api('GET')
@@ -37,6 +38,7 @@ const getUserMarks = getJson(contentJson)
 const getCompetitors = getJsonContentJson('/users/competitors')
 const getExperts = getJsonContentJson('/users/experts')
 const getTop = getJsonContentJson('/users/top')
+const getMarkTypes = getJsonContentJson('/markTypes')
 
 export default {
   recovery,
@@ -46,5 +48,7 @@ export default {
   getUserMarks,
   getExperts,
   getCompetitors,
-  getTop
+  getTop,
+  createMarkType,
+  getMarkTypes
 }

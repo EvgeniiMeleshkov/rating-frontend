@@ -4,8 +4,7 @@ import Input from '@/components/Input.jsx'
 import MarkForm from '@/pages//MarkForm'
 
 export default function Mark (props) {
-
-  const {competitors} = props
+  const { competitors } = props
 
   const [lookUp, setLookUp] = useState([])
   const [value, setValue] = useState('')
@@ -15,11 +14,11 @@ export default function Mark (props) {
     setValue(e.target.value)
     const val = e.target.value.trim()
     setLookUp(competitors.filter(x => {
-      return x.firstName.toLowerCase().includes(val.toLowerCase()) 
-      || x.lastName.toLowerCase().includes(val.toLowerCase())
+      return x.firstName.toLowerCase().includes(val.toLowerCase()) ||
+      x.lastName.toLowerCase().includes(val.toLowerCase())
     }))
-    
-    if(val === '') {
+
+    if (val === '') {
       setLookUp([])
     }
   }
@@ -31,24 +30,23 @@ export default function Mark (props) {
   }
 
   return (
-    <div className="container">
-      <div className="profile-style">
+    <div className='container'>
+      <div className='profile-style'>
         <Input value={value} onChange={search} placeholder='Поиск по участникам' />
         <div>
-          {lookUp.map((x, idx)=>{
+          {lookUp.map((x, idx) => {
             return (
               <ul key={idx}>
-                <li onClick={()=>select(x)}>{x.firstName} {x.lastName}</li>
+                <li onClick={() => select(x)}>{x.firstName} {x.lastName}</li>
               </ul>
-            )})
-          }
+            )
+          })}
         </div>
         {user._id && <>
-          <Profile mark user={user}/>
-        
-          <MarkForm/>
-        </>
-        }
+          <Profile mark user={user} />
+
+          <MarkForm />
+        </>}
       </div>
     </div>
   )

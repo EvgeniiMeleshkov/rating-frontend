@@ -11,63 +11,64 @@ import Rating from '@/pages/Rating'
 import API from '@/lib/api.js'
 import clear from '@/lib/clear.js'
 import Mark from './pages/Mark'
+import Settings from './pages/Settings'
 
 function Protected () {
-
   const [user, setUser] = useState({})
   const [top, setTop] = useState([])
 
   const [competitors, setCompetitors] = useState([])
-  useEffect(()=>{
+  useEffect(() => {
     API.getCompetitors()
-    .then(setCompetitors)
-    .catch(console.log)
-  },[])
+      .then(setCompetitors)
+      .catch(console.log)
+  }, [])
 
   // const position = top.find(x => x.email === user.email)
-  
-  useEffect(()=>{
-    API.getTop()
-    .then(setTop)
-    .then(res => {
-      const userInRating = top.find(x => x.email === res.email)
-      setUser({
-        ...res,
-        position: userInRating.position
-      })
-    })
-    .catch(console.log)
-  },[])
 
   useEffect(() => {
-      API.me()
+    API.getTop()
+      .then(setTop)
+      .then(res => {
+        const userInRating = top.find(x => x.email === res.email)
+        setUser({
+          ...res,
+          position: userInRating.position
+        })
+      })
+      .catch(console.log)
+  }, [])
+
+  useEffect(() => {
+    API.me()
       .then(setUser)
       .catch(clear)
-  },[top])
+  }, [top])
 
-  return ( 
+  return (
     <>
-      <Header user={user}/>
+      <Header user={user} />
       <Routes>
         <Route path='/profile' element={<Profile user={user} />} />
         <Route path='/experts' element={<Experts />} />
-        <Route path='/competitors' element={<Competitors competitors={competitors}/>} />
-        <Route path='/top' element={<Rating top={top.slice(0, 10)}/>} />
-        <Route path='/mark' element={<Mark competitors={competitors}/>} />
-      </Routes>  
+        <Route path='/competitors' element={<Competitors competitors={competitors} />} />
+        <Route path='/top' element={<Rating top={top.slice(0, 10)} />} />
+        <Route path='/mark' element={<Mark competitors={competitors} />} />
+        <Route path='/settings' element={<Settings />} />
+      </Routes>
     </>
   )
 }
 
 function Unprotected () {
-  return  (
+  return (
     <>
       <Header />
-    <Routes>
-      <Route path='/login' element={LoginPage} />
-      <Route path='/register' element={RegisterPage} />
-      <Route path='/notification' element={<Notification/>} />
-    </Routes>
+      <Routes>
+        <Route path='/login' element={LoginPage} />
+        <Route path='/register' element={RegisterPage} />
+        <Route path='/notification' element={<Notification />} />
+      </Routes>
     </>
   )
 }

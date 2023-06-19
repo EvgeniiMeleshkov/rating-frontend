@@ -1,0 +1,21 @@
+.radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.radio input {
+  min-width: 50px;
+  max-width: min-content;
+  position: absolute;
+  right: -5px;
+  top: 12px;
+}
+
+.radio label {
+  width: 25px;
+  position: relative;
+  color: var(--carbone)
+}

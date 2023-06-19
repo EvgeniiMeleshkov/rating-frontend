@@ -1,15 +1,15 @@
 import Table from '@/components/Table'
 
 export default function Rating (props) {
-  const {top} = props
+  const { top } = props
 
   return (
-    <div className="container">
-      <Table 
+    <div className='container'>
+      <Table
         label='Топ 10 участников'
         head={
           <>
-            <td></td>
+            <td />
             <td>Позиция</td>
             <td>Сумма</td>
             <td>Почта</td>
@@ -17,10 +17,10 @@ export default function Rating (props) {
             <td>Фамилия</td>
           </>
         }
-        children={top.map((x,idx)=>{
+        children={top.map((x, idx) => {
           return (
             <tr key={idx}>
-              <td><img className='avatar small' src={x.avatar}/></td>
+              <td><img className='avatar small' src={x.avatar} /></td>
               <td>{x.position}</td>
               <td>{x.sum}</td>
               <td>{x.email}</td>

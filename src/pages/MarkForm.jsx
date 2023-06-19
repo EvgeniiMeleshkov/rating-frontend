@@ -1,9 +1,9 @@
 import Table from '@/components/Table'
 export default function MarkForm (props) {
   return (
-    <Table 
+    <Table
       label='Выставление оценок'
-      
+
     />
   )
 }

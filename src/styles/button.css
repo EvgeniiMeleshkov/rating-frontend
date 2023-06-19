@@ -16,6 +16,10 @@ button.btn-orange {
   background-color: var(--orange);
 }
 
+button.btn-carbon {
+  background-color: var(--carbone);
+}
+
 button:disabled {
   cursor: pointer;
   background-color: var(--light-carbone);
