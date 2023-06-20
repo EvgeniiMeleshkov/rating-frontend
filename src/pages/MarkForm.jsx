@@ -26,8 +26,6 @@ export default function MarkForm (props) {
     }
   }, [user, flag])
 
-  console.log(marks)
-
   function createMark (markType, evt) {
     evt.preventDefault()
 

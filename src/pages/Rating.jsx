@@ -2,7 +2,7 @@ import Table from '@/components/Table'
 
 export default function Rating (props) {
   const { top } = props
-  console.log(top)
+  
   return (
     <div className='container'>
       <Table

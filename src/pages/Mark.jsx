@@ -4,7 +4,7 @@ import Input from '@/components/Input.jsx'
 import MarkForm from '@/pages//MarkForm'
 
 export default function Mark (props) {
-  const { competitors, expert } = props
+  const { competitors, expert, top } = props
 
   const [lookUp, setLookUp] = useState([])
   const [value, setValue] = useState('')
@@ -47,7 +47,7 @@ export default function Mark (props) {
           })}
         </div>
         {user._id && <>
-          <Profile mark user={user} />
+          <Profile mark top={top} user={user} />
 
           <MarkForm expert={expert} user={user}/>
         </>}

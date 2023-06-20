@@ -4,7 +4,6 @@ import clear from '@/lib/clear.js'
 import logo from '@/assets/ucdev.png'
 
 export default function Header (props) {
-  console.log(props)
 
   const { user } = props
 

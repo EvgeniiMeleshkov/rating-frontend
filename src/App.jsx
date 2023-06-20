@@ -49,7 +49,7 @@ function Protected () {
         <Route path='/experts' element={<Experts />} />
         <Route path='/competitors' element={<Competitors competitors={competitors} />} />
         <Route path='/top' element={<Rating top={top.slice(0, 10)} />} />
-        <Route path='/mark' element={<Mark expert={user} competitors={competitors} />} />
+        <Route path='/mark' element={<Mark top={top} expert={user} competitors={competitors} />} />
         <Route path='/settings' element={<Settings />} />
         <Route path='/settings/mark-types' element={<MarkTypes />} />
       </Routes>

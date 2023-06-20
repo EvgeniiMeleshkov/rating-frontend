@@ -18,7 +18,7 @@ export default function Profile (props) {
   const competitors = marks.map(x => x.competitor._id)
   const competitorsAmount = new Set(competitors)
 
-  const position = top.find(x => x.email === user.email)
+  const position = !user.expert ? top.find(x => x.email === user.email) : null
 
   useEffect(() => {
     if (user._id) {
