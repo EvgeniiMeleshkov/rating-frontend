@@ -5,7 +5,7 @@ import Image from '@/components/Image'
 import Table from '@/components/Table'
 
 export default function Profile (props) {
-  const { user, mark } = props
+  const { user, mark, top } = props
 
   const [marks, setMarks] = useState([])
 
@@ -17,6 +17,8 @@ export default function Profile (props) {
 
   const competitors = marks.map(x => x.competitor._id)
   const competitorsAmount = new Set(competitors)
+
+  const position = top.find(x => x.email === user.email)
 
   useEffect(() => {
     if (user._id) {
@@ -52,7 +54,7 @@ export default function Profile (props) {
                 <li><h3>Оценено участников: {isMarks ? competitorsAmount.size : 0}</h3></li>
                 </ul>
               : <ul>
-                <li><h3>Место в рейтинге: {user.position ? user.position : 'нет данных'}</h3></li>
+                <li><h3>Место в рейтинге: {position ? position.position : 'нет данных'}</h3></li>
                 <li><h3>Всего очков: {isMarks ? pointAmount : 0}</h3></li>
                 </ul>}
           </div>

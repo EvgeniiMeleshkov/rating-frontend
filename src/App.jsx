@@ -30,13 +30,6 @@ function Protected () {
   useEffect(() => {
     API.getTop()
       .then(setTop)
-      .then(res => {
-        const userInRating = top.find(x => x.email === res.email)
-        setUser({
-          ...res,
-          position: userInRating.position
-        })
-      })
       .catch(console.log)
   }, [])
 
@@ -46,11 +39,13 @@ function Protected () {
       .catch(clear)
   }, [top])
 
+  
+
   return (
     <>
       <Header user={user} />
       <Routes>
-        <Route path='/profile' element={<Profile user={user} />} />
+        <Route path='/profile' element={<Profile top={top} user={user} />} />
         <Route path='/experts' element={<Experts />} />
         <Route path='/competitors' element={<Competitors competitors={competitors} />} />
         <Route path='/top' element={<Rating top={top.slice(0, 10)} />} />
