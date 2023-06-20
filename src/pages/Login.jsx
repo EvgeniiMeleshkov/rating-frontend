@@ -15,6 +15,7 @@ export default
         <Input type='text' name='email' label='Электронная почта' />
 
         <Button className='btn-orange'>Войти</Button>
+        <p>После нажатия кнопки "Войти", на вашу почту будет отправлено письмо с сылкой для входа</p>
       </Form>
     </div>
   </div>

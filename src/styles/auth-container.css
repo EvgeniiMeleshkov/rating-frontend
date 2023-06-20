@@ -6,3 +6,6 @@
   align-items: center;
   justify-content: start;
 }
+.auth-container p {
+  text-align: center;
+}
