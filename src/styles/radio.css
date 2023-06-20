@@ -19,3 +19,26 @@
   position: relative;
   color: var(--carbone)
 }
+
+.radio.mark {
+  width: max-content;
+  margin-right: 10px;
+  margin-bottom: -20px;
+  margin-top: 15px;
+  margin-left: 20px;
+  align-items: baseline;
+  position: relative;
+}
+.radio.mark label {
+  display: flex;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.radio.mark button {
+  width: max-content;
+  height: max-content;
+  background: transparent;
+  position: absolute;
+  left: -20px;
+  bottom: 10px;
+}

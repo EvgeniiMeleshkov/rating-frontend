@@ -18,7 +18,7 @@ export default function MarkTypes (props) {
     if (obj.title && obj.values.length > 1 && obj.multiplier) {
       console.log('Отлично! \n', obj)
       api.createMarkType(json)
-        .then((res=>setA(a+1)))
+        .then(res => setA(a + 1))
         .then(clear)
         .catch(console.log)
     } else {
@@ -79,12 +79,12 @@ export default function MarkTypes (props) {
 
             <label htmlFor='radio-2'>
               2
-              <input id='radio-2' type='radio' value='1' name='multiplier' />
+              <input id='radio-2' type='radio' value='2' name='multiplier' />
             </label>
 
             <label htmlFor='radio-3'>
               3
-              <input id='radio-3' type='radio' value='1' name='multiplier' />
+              <input id='radio-3' type='radio' value='3' name='multiplier' />
             </label>
 
           </div>

@@ -27,6 +27,7 @@ const register = postTextContentJson('/auth/register')
 const login = postTextContentJson('/auth/login')
 const recovery = postTextContentJson('/auth/recovery')
 const createMarkType = postTextContentJson('/markTypes')
+const createMark = postTextContentJson('/marks')
 
 // GET
 const get = api('GET')
@@ -50,5 +51,6 @@ export default {
   getCompetitors,
   getTop,
   createMarkType,
-  getMarkTypes
+  getMarkTypes,
+  createMark
 }

@@ -4,7 +4,7 @@ import Input from '@/components/Input.jsx'
 import MarkForm from '@/pages//MarkForm'
 
 export default function Mark (props) {
-  const { competitors } = props
+  const { competitors, expert } = props
 
   const [lookUp, setLookUp] = useState([])
   const [value, setValue] = useState('')
@@ -32,7 +32,11 @@ export default function Mark (props) {
   return (
     <div className='container'>
       <div className='profile-style'>
-        <Input value={value} onChange={search} placeholder='Поиск по участникам' />
+        <p>Уважаемый <b>{expert.firstName} {expert.lastName}</b>,
+          чтобы найти участника для выставления оценки,
+          начните вводить его имя или фамилию в "Поиске по участникам"
+        </p>
+        <Input className='mark' value={value} onChange={search} placeholder='Поиск по участникам' />
         <div>
           {lookUp.map((x, idx) => {
             return (
@@ -45,7 +49,7 @@ export default function Mark (props) {
         {user._id && <>
           <Profile mark user={user} />
 
-          <MarkForm />
+          <MarkForm expert={expert} user={user}/>
         </>}
       </div>
     </div>

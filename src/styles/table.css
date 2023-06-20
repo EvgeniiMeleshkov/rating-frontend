@@ -58,3 +58,23 @@ table label {
   position: absolute;
   top: -21px;
 }
+
+.mark-data {
+  width: 100%;
+  justify-content: center;
+}
+
+td button {
+  background: transparent;
+}
+
+.mark-data form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mark-data form button {
+  width: min-content;
+}
