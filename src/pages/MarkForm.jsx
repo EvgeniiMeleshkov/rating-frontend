@@ -9,7 +9,7 @@ export default function MarkForm (props) {
   const [markTypes, setMarkTypes] = useState([])
   const [marks, setMarks] = useState([])
 
-
+  console.log(marks)
   const [flag, setFlag] = useState(true)
 
   useEffect(() => {
@@ -21,7 +21,11 @@ export default function MarkForm (props) {
   useEffect(() => {
     if (user) {
       api.getUserMarks(`/marks/user/${user._id}`)()
-      .then(setMarks)
+      .then((res) => {
+        console.log(res)
+        const myMarks = res.filter(x => x.expert._id === expert._id)
+        setMarks(myMarks)
+      })
       .catch(console.log)
     }
   }, [user, flag])
@@ -88,9 +92,10 @@ export default function MarkForm (props) {
               </td>
               <td>
                 {marks.map((z, idx)=> {
+                
                   return (
                     <div key={x._id+z._id}>
-                    {x._id === z.markType._id ? z.value : ''}
+                      {x._id === z.markType._id ? z.value : ''}
                     </div>
                   )
                 })}
